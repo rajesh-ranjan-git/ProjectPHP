@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Home Page</title>
+
+		<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" src="css/bootstrap.css">
+		<script src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js"></script>
+
+
+		<script>
+			$(document).ready(function(){
+    			$(".insert").click(function(){
+        			document.getElementById("input-form").style.display = "block";
+        			document.getElementById("search-idd").style.display = "none";
+					document.getElementById("search-name").style.display = "none";
+					document.getElementById("search-email").style.display = "none";
+					document.getElementById("search-phone").style.display = "none";
+					document.getElementById("search-button").style.display = "none";
+    			});
+
+    			$("#option-id").click(function(){
+        			document.getElementById("input-form").style.display = "none";
+        			document.getElementById("search-idd").style.display = "block";
+					document.getElementById("search-name").style.display = "none";
+					document.getElementById("search-email").style.display = "none";
+					document.getElementById("search-phone").style.display = "none";
+					document.getElementById("search-button").style.display = "block";
+    			});
+
+    			$("#option-name").click(function(){
+        			document.getElementById("input-form").style.display = "none";
+        			document.getElementById("search-idd").style.display = "none";
+					document.getElementById("search-name").style.display = "block";
+					document.getElementById("search-email").style.display = "none";
+					document.getElementById("search-phone").style.display = "none";
+					document.getElementById("search-button").style.display = "block";
+    			});
+
+    			$("#option-email").click(function(){
+        			document.getElementById("input-form").style.display = "none";
+        			document.getElementById("search-idd").style.display = "none";
+					document.getElementById("search-name").style.display = "none";
+					document.getElementById("search-email").style.display = "block";
+					document.getElementById("search-phone").style.display = "none";
+					document.getElementById("search-button").style.display = "block";
+    			});
+
+    			$("#option-phone").click(function(){
+        			document.getElementById("input-form").style.display = "none";
+        			document.getElementById("search-idd").style.display = "none";
+					document.getElementById("search-name").style.display = "none";
+					document.getElementById("search-email").style.display = "none";
+					document.getElementById("search-phone").style.display = "block";
+					document.getElementById("search-button").style.display = "block";
+    			});
+			});
+
+		</script>
+
+	</head>
+	<body>
+		<div class="container-fluid" style="background-image:url(images/back.jpg); background-position:center center; height:700px">
+			<div class="container">
+				<div style="padding:40px; color:white">
+
+					<h2 style="text-align:center">Choose Operations</h2><br>
+
+						<div class="row"  style="padding-top:20px">
+							<div class="col-sm-4 col-xs-12">
+								<button class="btn btn-default insert" style="width:100%">Insert Records</button>
+							</div>
+
+							<div class="col-sm-4 col-xs-12">
+								<a href="records.php" class="btn btn-default" style="width:100%">Display Records</a>
+							</div>
+
+							<div class="col-sm-4 col-xs-12">
+								<div class="dropdown">
+								  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%">Search Records
+								  <span class="caret"></span></button>
+								  <ul class="dropdown-menu" style="width:100%">
+								    <li id="option-id"><a href="#">By ID</a></li>
+								    <li id="option-name"><a href="#">By Name</a></li>
+								    <li id="option-email"><a href="#">By Email</a></li>
+								    <li id="option-phone"><a href="#">By Phone</a></li>
+								  </ul>
+									  	
+								</div>
+							</div>
+
+							<div class="col-sm-12 col-xs-12" style="padding-top:40px">
+
+								<form action="search.php" method="post">
+							  	  <div class="form-group" id="search-idd" style="display:none">
+								    <label for="id">ID :</label>
+								    <input type="text" class="form-control" id="idd" name="idd" placeholder="Enter your ID">
+								  </div>
+							  	  <div class="form-group" id="search-name" style="display:none">
+								    <label for="name">Name :</label>
+								    <input type="name" class="form-control" id="name" name="name" placeholder="Enter your Name">
+									  </div>
+								  <div class="form-group" id="search-email" style="display:none">
+								    <label for="email">Email:</label>
+								    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+								  </div>
+								  <div class="form-group" id="search-phone" style="display:none">
+								    <label for="phone">Phone:</label>
+								    <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone">
+								  </div>
+								  
+								  <button type="submit" class="btn btn-default" id="search-button" style="display:none">Search</button>
+								</form>
+
+							</div>
+						</div>
+
+						<div class="row" style="padding-top:40px">
+		  
+			  			  	<form action="insert.php" method="post" id="input-form" style="display:none">
+						  	  <div class="form-group">
+							    <label for="id">ID :</label>
+							    <input type="text" class="form-control" id="idd" name="idd" placeholder="Enter your ID" required>
+							  </div>
+						  	  <div class="form-group">
+							    <label for="name">Name :</label>
+							    <input type="name" class="form-control" id="name" name="name" placeholder="Enter your Name" required>
+							  </div>
+							  <div class="form-group">
+							    <label for="email">Email:</label>
+							    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+							  </div>
+							  <div class="form-group">
+							    <label for="phone">Phone:</label>
+							    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone" required>
+							  </div>
+								  
+							  <button type="submit" class="btn btn-default">Submit</button>
+							</form>
+
+						</div>
+				</div>
+
+
+				<center><div class="col-sm-12">
+					<a href="index.html" class="btn btn-default">Log Out</a>
+				</div></center>
+
+			</div>
+		</div>
+
+	</body>
+</html>
